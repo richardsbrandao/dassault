@@ -1,0 +1,5 @@
+docker run --name neurose -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=dassault -p 5432:5432 -d postgres:9.6
+
+docker run -d --name ironman_dev poklet/cassandra start
+docker run -it --rm --net container:ironman_dev poklet/cassandra cqlsh
+docker run -it --rm --net container:ironman_dev poklet/cassandra nodetool status
